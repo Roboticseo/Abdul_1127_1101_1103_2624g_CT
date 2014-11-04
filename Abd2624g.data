@@ -74,6 +74,7 @@ SOWCR = 0.3878
 SWL = MIN(98.2059806 * ((PORO*100)^-2.46377) , 0.6 )
 SWCR = SWL 
 PCW = 4.41423*28*0.318316*((PORO/ARRKX)^0.5)
+PCW = 0
 PERMY = PERMX
 PERMZ = 1 * PERMX
 --MULTPV(1:1,1:25,) = 100
@@ -282,7 +283,7 @@ fipnum(,,60:126) = 2
 SOLUTION
 
 EQUIL
-     1176	140   1176    1*     1*    1*    1	1	0	1*   / 
+     1176	140   1176.0    1*     1*    1*    1	1	0	1*   / 
 /
 
 RSCONST
