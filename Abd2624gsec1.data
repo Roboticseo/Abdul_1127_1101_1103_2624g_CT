@@ -103,8 +103,8 @@ PINCHREG
  /
 
 
---INCLUDE
---'MULTS.inc' / мульты адаптации
+INCLUDE
+'MULTS.inc' / мульты адаптации
 
 --ARITHMETIC
 --PCW = ARRMPCWINIT * PCW -- корректирую на начальное насыщение и настроку ВНК
