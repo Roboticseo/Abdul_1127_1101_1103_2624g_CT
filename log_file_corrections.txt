@@ -1,38 +1,53 @@
---- D:/BN_work/10_2014/Abdul_1127_1101_1103_2624g_CT/model/Abd2624g.data	Mon Nov 10 16:53:10 2014
-+++ D:/BN_work/10_2014/Abdul_1127_1101_1103_2624g_CT/model/Abd2624g2.data	Mon Nov 10 16:52:29 2014
-@@ -45,2 +45,7 @@
- 
-+GRIDOPTS
-+YES 0 2
-+/
-+
-+
- ENDSCALE
-@@ -76,9 +81,10 @@
- PCW = 1*28*0.318316*((PORO/ARRKX)^0.5)
-+PERMX = 3*PERMX 
- PERMY = PERMX
- PERMZ = 1 * PERMX
----MULTPV(1:1,1:25,) = 100
----MULTPV(46:46,1:25,) = 100
----MULTPV(46:46,1:25,) = 100
----MULTPV(1:46,25:25,) = 100
----MULTPV(1:46,1:1,) = 1
-+MULTPV = 1
-+MULTPV(1:85,1:1,) = 25 
-+MULTPV(1:85,116:116,) = 25 
-+MULTPV(1:1,1:116,) = 30
-+MULTPV(85:85,1:116,) = 10
- NTG(,,65:65) = 0
-@@ -88,3 +94,11 @@
- KRW = 1
-+PINCHNUM = 1 
-+PINCHNUM(,,1:64) = 2
- /
-+
-+PINCHREG
-+5* /
-+3.0 GAP 3* /
-+ /
-+
- 
+10c10,11
+<   85  116  126 /
+---
+> 55 48 126 /
+> 
+64c65
+< 'GEOL/GRID.grdecl' / -- grid 
+---
+> 'GEOL/Abd2624g2_001_1_grid.inc' / -- grid 
+66,67c67,68
+< INCLUDE
+< 'GEOL/NTG.grdecl' /
+---
+> --INCLUDE
+> --'GEOL/NTG.grdecl' /
+69,70c70,71
+< INCLUDE
+< 'GEOL/PORO.grdecl' /
+---
+> --INCLUDE
+> --'GEOL/PORO.grdecl' /
+85,89c86,90
+< MULTPV = 1
+< MULTPV(1:85,1:1,) = 25 
+< MULTPV(1:85,116:116,) = 25 
+< MULTPV(1:1,1:116,) = 30
+< MULTPV(85:85,1:116,) = 10
+---
+> --MULTPV = 1
+> --MULTPV(1:85,1:1,) = 25 
+> --MULTPV(1:85,116:116,) = 25 
+> --MULTPV(1:1,1:116,) = 30
+> --MULTPV(85:85,1:116,) = 10
+302c303
+< 'GEOL/EQLNUM.inc' / 
+---
+> 'GEOL/Abd2624g2_001_1_regs.inc' / 
+304,310c305,311
+< ARITHMETIC
+< pvtnum=1
+< satnum=pvtnum 
+< fipnum=1
+< fipnum(,,65:126) = 2 
+< eqlnum(,,65:126) = 3
+< /
+---
+> --ARITHMETIC
+> --pvtnum=1
+> --satnum=pvtnum 
+> --fipnum=1
+> --fipnum(,,65:126) = 2 
+> --eqlnum(,,65:126) = 3
+> --/
