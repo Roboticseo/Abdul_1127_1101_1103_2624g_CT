@@ -1,91 +1,35 @@
---- C:/Users/rfd/AppData/Local/Temp/dw817d_event.inc	Tue Nov 11 22:55:23 2014
-+++ C:/WORK/2014_11/Abdul_1127_1101_1103_2624g_CT/model/INCL/event.inc	Tue Nov 11 21:43:33 2014
-@@ -31,3 +31,3 @@
- 1111	01.05.1989	PROD	HLIQ  HWEF    BHPT 10 
--1111	02.09.2001	INJE	HWAT  HWEF    BHPT 350 
-+1111	02.09.2001	INJE	HWAT  HWEF    BHPT 150 
- --********************--
-@@ -60,3 +60,3 @@
- --********************--
--1118	01.05.1990	INJE	HWAT  HWEF    BHPT 350 
-+1118	01.05.1990	INJE	HWAT  HWEF    BHPT 250 
- --********************--
---- C:/Users/rfd/AppData/Local/Temp/UhTRve_MULTS.inc	Tue Nov 11 22:55:52 2014
-+++ C:/WORK/2014_11/Abdul_1127_1101_1103_2624g_CT/model/MULTS.inc	Tue Nov 11 22:38:15 2014
-@@ -16,6 +16,6 @@
- ARRKX=ARRKX + 1*block(16397.9575, 19701.206)	 -- 1115
--ARRKX=ARRKX + 1*block(16788.46775, 19699.88075)	 -- 1116
-+ARRKX=ARRKX + 2*block(16788.46775, 19699.88075)	 -- 1116
- ARRKX=ARRKX + 1*block(17185.141, 19628.114)	 -- 1117
- ARRKX=ARRKX + 1*block(16928.026, 19321.69625)	 -- 1118
--ARRKX=ARRKX + 1*block(16537.5155, 19323.02125)	 -- 1119
-+ARRKX=ARRKX + 4*block(16537.5155, 19323.02125)	 -- 1119
- ARRKX=ARRKX + 1*block(18499.34225, 22049.9675)	 -- 1125
-@@ -90,3 +90,3 @@
- ARRKZ=ARRKZ + 1*block(16483.375, 20347.50575)	 -- 1108
--ARRKZ=ARRKZ + 0.3*block(17270.5585, 20274.41425)	 -- 1109
-+ARRKZ=ARRKZ + 1*block(17270.5585, 20274.41425)	 -- 1109
- ARRKZ=ARRKZ + 1*block(17480.55825, 19902.3925)	 -- 1110
-@@ -97,3 +97,3 @@
- ARRKZ=ARRKZ + 1*block(16788.46775, 19699.88075)	 -- 1116
--ARRKZ=ARRKZ + 0.1*block(17185.141, 19628.114)	 -- 1117
-+ARRKZ=ARRKZ + 1*block(17185.141, 19628.114)	 -- 1117 
- ARRKZ=ARRKZ + 1*block(16928.026, 19321.69625)	 -- 1118
-@@ -121,2 +121,42 @@
- ARRKZ = INTERPOLATE_ML_IDW (ARRKZ, 0, 1,3)
-+ARRMZ	=0
-+ARRMZ=ARRMZ + 1*block(20647.37975, 23054.17575)	 -- 1059
-+ARRMZ=ARRMZ + 1*block(19702.1495, 23716.77675)	 -- 1089
-+ARRMZ=ARRMZ + 1*block(18498.01725, 21659.4575)	 -- 1101
-+ARRMZ=ARRMZ + 1*block(18528.8315, 21307.2495)	 -- 1103
-+ARRMZ=ARRMZ + 1*block(18937.8305, 21094.5995)	 -- 1104
-+ARRMZ=ARRMZ + 1*block(17628.92925, 20234.787)	 -- 1106
-+ARRMZ=ARRMZ + 1*block(17736.34775, 19818.30025)	 -- 1107
-+ARRMZ=ARRMZ + 1*block(16483.375, 20347.50575)	 -- 1108
-+ARRMZ=ARRMZ + 11*block(17270.5585, 20274.41425)	 -- 1109
-+ARRMZ=ARRMZ + 1*block(17480.55825, 19902.3925)	 -- 1110
-+ARRMZ=ARRMZ + 1*block(17013.4435, 19967.99625)	 -- 1111
-+ARRMZ=ARRMZ + 1*block(16616.7705, 20039.76275)	 -- 1112
-+ARRMZ=ARRMZ + 1*block(16226.26025, 20041.088)	 -- 1113
-+ARRMZ=ARRMZ + 1*block(16397.9575, 19701.206)	 -- 1115
-+ARRMZ=ARRMZ + 1*block(16788.46775, 19699.88075)	 -- 1116
-+ARRMZ=ARRMZ + 11*block(17185.141, 19628.114)	 -- 1117
-+ARRMZ=ARRMZ + 1*block(16928.026, 19321.69625)	 -- 1118
-+ARRMZ=ARRMZ + 1*block(16537.5155, 19323.02125)	 -- 1119
-+ARRMZ=ARRMZ + 1*block(18499.34225, 22049.9675)	 -- 1125
-+ARRMZ=ARRMZ + 1*block(18127.3205, 21839.9675)	 -- 1127
-+ARRMZ=ARRMZ + 1*block(19330.12825, 23506.7775)	 -- 1287
-+ARRMZ=ARRMZ + 1*block(19578.43, 23102.61625)	 -- 1288
-+ARRMZ=ARRMZ + 1*block(19956.6145, 23242.17425)	 -- 1289
-+ARRMZ=ARRMZ + 1*block(19769.94125, 22941.91925)	 -- 1291
-+ARRMZ=ARRMZ + 1*block(19551.1285, 22603.3625)	 -- 1293
-+ARRMZ=ARRMZ + 1*block(19347.2915, 22904.9425)	 -- 1295
-+ARRMZ=ARRMZ + 1*block(19124.96625, 23417.847)	 -- 1297
-+ARRMZ=ARRMZ + 1*block(19002.5715, 23194.1965)	 -- 1298
-+ARRMZ=ARRMZ + 1*block(19033.3855, 22841.9885)	 -- 1300
-+ARRMZ=ARRMZ + 1*block(15769.2835, 21207.78075)	 -- 173RTM
-+ARRMZ=ARRMZ + 1*block(16583.76825, 21633.94325)	 -- 189RTM
-+ARRMZ=ARRMZ + 1*block(15773.2585, 22379.3115)	 -- 2273
-+ARRMZ=ARRMZ + 1*block(15705.0045, 21131.1765)	 -- 2621G
-+ARRMZ=ARRMZ + 1*block(16040.04925, 21763.82575)	 -- 2639G
-+ARRMZ=ARRMZ + 1*block(15968.2825, 21367.15275)	 -- 2640G
-+ARRMZ=ARRMZ + 1*block(17612.62825, 19204.13925)	 -- 50KGB
-+ARRMZ=ARRMZ + 1*block(15701.492, 21982.6385)	 -- 72KGB
-+ARRMZ=ARRMZ + 1*block(18385.7605, 22536.89575)	 -- 8ERM
-+ARRMZ = INTERPOLATE_ML_IDW (ARRMZ, 0, 1,3)
-  /
-56c56
-<  01 'JUN' 1973 /
----
->  01 'JAN' 1980 /
-117c117,122
-< MULTZ = (ARRMARK==1)*ARRKX*ARRKZ * MULTZ + (ARRMARK!=1)*MULTZ--ARRMARK это куб, который
----
-> --ARRMZ - это куб, который везде имеет единицу, а занчения > 1 имеет в тех скважинах. где нужно отключить фильтрацию пинча. 
-> --Середина расстояния - это значение 6
-> Значит, если хотим ближе к скажине обрубить, значит ставим значение ближе к 6. 
-> --если хотим затронуть облать подальше - ставим 100. Вот так
-> ARRMZ = (ARRMZ>=6)*0+(ARRMZ<6)*1
-> MULTZ = (ARRMARK==1)*ARRMZ * MULTZ + (ARRMARK!=1)*MULTZ--ARRMARK это куб, который
-119a125
-> PERMZ = ARRKX*ARRKZ*PERMZ 
+--- C:/Users/rfd/AppData/Local/Temp/Za9CQd_Abd2624g2.data	Tue Nov 11 23:57:19 2014
++++ C:/WORK/2014_11/Abdul_1127_1101_1103_2624g_CT/model/Abd2624g2.data	Tue Nov 11 23:25:45 2014
+@@ -71,2 +71,5 @@
+ 
++INCLUDE
++'GEOL/ARRMARK.inc' / -- grid 
++
+ NOECHO
+@@ -104,8 +107,21 @@
+ 
+---INCLUDE
+---'MULTS.inc' / мульты адаптации
++INCLUDE
++'MULTS.inc' / мульты адаптации
+ 
+---ARITHMETIC
+---PCW = ARRMPCWINIT * PCW -- корректирую на начальное насыщение и настроку ВНК
+--- /
++ARITHMETIC
++PCW = ARRMPCW * PCW
++PERMX = ARRKX * PERMX
++PERMY = PERMX
++MULTZ = 1 
++--ARRMZ - это куб, который везде имеет единицу, а занчения > 1 имеет в тех скважинах. где нужно отключить фильтрацию пинча. 
++--Середина расстояния - это значение 6
++--Значит, если хотим ближе к скажине обрубить, значит ставим значение ближе к 6. 
++--если хотим затронуть облать подальше - ставим 100. Вот так
++ARRMZ = (ARRMZ>=6)*0+(ARRMZ<6)*1
++MULTZ = (ARRMARK==1)*ARRMZ * MULTZ + (ARRMARK!=1)*MULTZ
++--ARRMARK это куб, который
++--позволяет отметить ячейки, огибающие неколлектор. таким образом этот куб позволит контролировать 
++--проводимость NNC соединений, порождаемых пинчом
++PERMZ = ARRKX*ARRKZ*PERMZ 
++ /
+ 
