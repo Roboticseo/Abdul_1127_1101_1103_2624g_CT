@@ -29,7 +29,7 @@ ETAB
 1113	01.10.1989	PROD	HLIQ  HWEF    BHPT 10 
 --********************--
 1111	01.05.1989	PROD	HLIQ  HWEF    BHPT 10 
-1111	02.09.2001	INJE	HWAT  HWEF    BHPT 350 
+1111	02.09.2001	INJE	HWAT  HWEF    BHPT 150 
 --********************--
 1110	01.11.1990	PROD	HLIQ  HWEF    BHPT 10 
 --********************--
@@ -58,7 +58,7 @@ ETAB
 --********************--
 50KGB	01.10.1980	PROD	HLIQ  HWEF    BHPT 10 
 --********************--
-1118	01.05.1990	INJE	HWAT  HWEF    BHPT 350 
+1118	01.05.1990	INJE	HWAT  HWEF    BHPT 250 
 --********************--
 8ERM	01.08.1973	PROD	HLIQ  HWEF    BHPT 10 
 --********************--

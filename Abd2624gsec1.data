@@ -53,7 +53,7 @@ ENDSCALE
 /
 
 START
- 01 'JUN' 1973 /
+ 01 'JAN' 1980 /
 /
 
 
@@ -69,6 +69,9 @@ INCLUDE
 
 --INCLUDE
 --'GEOL/PORO.grdecl' /
+
+INCLUDE
+'GEOL/ARRMARKsec1.inc' / -- grid 
 
 NOECHO
 
@@ -110,7 +113,16 @@ ARITHMETIC
 PCW = ARRMPCW * PCW
 PERMX = ARRKX * PERMX
 PERMY = PERMX
-PERMZ = ARRKX*ARRKZ * PERMZ
+MULTZ = 1 
+--ARRMZ - это куб, который везде имеет единицу, а занчения > 1 имеет в тех скважинах. где нужно отключить фильтрацию пинча. 
+--Середина расстояния - это значение 6
+Значит, если хотим ближе к скажине обрубить, значит ставим значение ближе к 6. 
+--если хотим затронуть облать подальше - ставим 100. Вот так
+ARRMZ = (ARRMZ>=6)*0+(ARRMZ<6)*1
+MULTZ = (ARRMARK==1)*ARRMZ * MULTZ + (ARRMARK!=1)*MULTZ--ARRMARK это куб, который
+--позволяет отметить ячейки, огибающие неколлектор. таким образом этот куб позволит контролировать 
+--проводимость NNC соединений, порождаемых пинчом
+PERMZ = ARRKX*ARRKZ*PERMZ 
  /
 
 
