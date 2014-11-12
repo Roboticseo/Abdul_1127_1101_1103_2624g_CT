@@ -7,7 +7,7 @@ MAXLINIT 600
 METRIC
 
 DIMENS
-55 48 126 /
+85	72	126 /
 
 
 EQLDIMS
@@ -62,7 +62,7 @@ GRID
 NEWTRAN
 
 INCLUDE
-'GEOL/Abd2624g2_001_1_grid.inc' / -- grid 
+'GEOL/Abd2624g2_003_3_grid.inc' / -- grid 
 
 --INCLUDE
 --'GEOL/NTG.grdecl' /
@@ -70,8 +70,8 @@ INCLUDE
 --INCLUDE
 --'GEOL/PORO.grdecl' /
 
-INCLUDE
-'GEOL/ARRMARKsec1.inc' / -- grid 
+--INCLUDE
+--'GEOL/ARRMARKsec1.inc' / -- grid 
 
 NOECHO
 
@@ -98,6 +98,9 @@ KRWR = 0.05474/0.45238
 KRW = 1
 PINCHNUM = 1 
 PINCHNUM(,,1:64) = 2
+ntg=1
+poro=0.15
+permx=10
 /
 
 PINCHREG
@@ -118,8 +121,8 @@ MULTZ = 1
 --Середина расстояния - это значение 6
 --Значит, если хотим ближе к скажине обрубить, значит ставим значение ближе к 6. 
 --если хотим затронуть облать подальше - ставим 100. Вот так
-ARRMZ = (ARRMZ>=6)*0+(ARRMZ<6)*1
-MULTZ = (ARRMARK==1)*ARRMZ * MULTZ + (ARRMARK!=1)*MULTZ--ARRMARK это куб, который
+--ARRMZ = (ARRMZ>=6)*0+(ARRMZ<6)*1
+--MULTZ = (ARRMARK==1)*ARRMZ * MULTZ + (ARRMARK!=1)*MULTZ--ARRMARK это куб, который
 --позволяет отметить ячейки, огибающие неколлектор. таким образом этот куб позволит контролировать 
 --проводимость NNC соединений, порождаемых пинчом
 PERMZ = ARRKX*ARRKZ*PERMZ 
@@ -315,7 +318,7 @@ ROCK
 REGIONS
 
 INCLUDE
-'GEOL/Abd2624g2_001_1_regs.inc' / 
+'GEOL/Abd2624g2_003_3_regs.inc' / 
 
 --ARITHMETIC
 --pvtnum=1
@@ -329,7 +332,7 @@ SOLUTION
 
 EQUIL
      1176	140   1183.000    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
-     1176	140   1183.000    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
+     1176	140   1190.204    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
      1176	140   1100.204    1*     1*    1*    1	1	0	1*   / -- водоносный
 /
 

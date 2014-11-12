@@ -7,7 +7,7 @@ MAXLINIT 600
 METRIC
 
 DIMENS
-55 48 126 /
+35	69	126 /
 
 
 EQLDIMS
@@ -53,7 +53,7 @@ ENDSCALE
 /
 
 START
- 01 'JAN' 1980 /
+ 01 'JUN' 1973 /
 /
 
 
@@ -62,7 +62,7 @@ GRID
 NEWTRAN
 
 INCLUDE
-'GEOL/Abd2624g2_001_1_grid.inc' / -- grid 
+'GEOL/Abd2624g2_002_2_grid.inc' / -- grid 
 
 --INCLUDE
 --'GEOL/NTG.grdecl' /
@@ -98,6 +98,9 @@ KRWR = 0.05474/0.45238
 KRW = 1
 PINCHNUM = 1 
 PINCHNUM(,,1:64) = 2
+ntg=1
+poro=0.15
+permx=10
 /
 
 PINCHREG
@@ -315,7 +318,7 @@ ROCK
 REGIONS
 
 INCLUDE
-'GEOL/Abd2624g2_001_1_regs.inc' / 
+'GEOL/Abd2624g2_002_2_regs.inc' / 
 
 --ARITHMETIC
 --pvtnum=1
@@ -329,7 +332,7 @@ SOLUTION
 
 EQUIL
      1176	140   1183.000    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
-     1176	140   1183.000    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
+     1176	140   1190.204    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
      1176	140   1100.204    1*     1*    1*    1	1	0	1*   / -- водоносный
 /
 

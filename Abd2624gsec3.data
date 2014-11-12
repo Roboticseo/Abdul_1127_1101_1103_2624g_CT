@@ -7,7 +7,7 @@ MAXLINIT 600
 METRIC
 
 DIMENS
-55 48 126 /
+85	72	126 /
 
 
 EQLDIMS
@@ -62,7 +62,7 @@ GRID
 NEWTRAN
 
 INCLUDE
-'GEOL/Abd2624g2_001_1_grid.inc' / -- grid 
+'GEOL/Abd2624g2_003_3_grid.inc' / -- grid 
 
 --INCLUDE
 --'GEOL/NTG.grdecl' /
@@ -71,7 +71,7 @@ INCLUDE
 --'GEOL/PORO.grdecl' /
 
 INCLUDE
-'GEOL/ARRMARKsec1.inc' / -- grid 
+'GEOL/ARRMARKsec3.inc' / -- grid 
 
 NOECHO
 
@@ -315,7 +315,7 @@ ROCK
 REGIONS
 
 INCLUDE
-'GEOL/Abd2624g2_001_1_regs.inc' / 
+'GEOL/Abd2624g2_003_3_regs.inc' / 
 
 --ARITHMETIC
 --pvtnum=1
