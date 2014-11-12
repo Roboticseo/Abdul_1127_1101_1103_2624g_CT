@@ -4,3 +4,5 @@ USER/*
 *.SMSPEC
 *.UNSMRY
 */*GRID.grdecl
+*.flux
+pat/*
