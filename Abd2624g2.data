@@ -92,7 +92,7 @@ PERMY = PERMX
 PERMZ = 1 * PERMX
 MULTPV = 1
 MULTPV(1:85,1:1,) = 25 
-MULTPV(1:85,116:116,) = 25 
+MULTPV(1:85,116:116,) = 100 
 MULTPV(1:1,1:116,) = 30
 MULTPV(85:85,1:116,) = 10
 NTG(,,65:65) = 0
@@ -118,6 +118,8 @@ ARRREG1(,,65:81) = (ARRFIP==1)*1+(ARRFIP!=1)*ARRREG1
 ARRREG1(,,65:81) = (ARRFIP==2)*2+(ARRFIP!=2)*ARRREG1 
 ARRREG1(,,41:81) = (ARRFIP==3)*3+(ARRFIP!=3)*ARRREG1 
 ARRREG1(,,54:81) = (ARRFIP==4)*4+(ARRFIP!=4)*ARRREG1 
+ARRREG1(,,57:81) = (ARRFIP==5)*5+(ARRFIP!=5)*ARRREG1 
+ARRREG2(46:51,96:101,48:50) = 3 -- для адаптации 1295
 ARRREG2 = 0
 -- ARRREG2 куб, который обозначает номера секторов и пределы модификаций по индексу k для multz (только распространение ненулевых множителей)
 -- например в подсекторах модификации носят измеениия в разных слоях, так как разные ГСР для каждого сектора. поэтому должен быть 
@@ -126,6 +128,8 @@ ARRREG2(,,58:81) = (ARRFIP==1)*1+(ARRFIP!=1)*ARRREG2
 ARRREG2(,,58:81) = (ARRFIP==2)*2+(ARRFIP!=2)*ARRREG2 
 ARRREG2(,,56:81) = (ARRFIP==3)*3+(ARRFIP!=3)*ARRREG2 
 ARRREG2(,,54:81) = (ARRFIP==4)*4+(ARRFIP!=4)*ARRREG2 
+ARRREG2(,,57:81) = (ARRFIP==5)*5+(ARRFIP!=5)*ARRREG2 
+ARRREG2(46:51,96:101,48:50) = 3 -- для адаптации 1295
  /
 
 ARITHMETIC
@@ -136,6 +140,7 @@ MULTZ = 1
 MULTZ = (ARRREG1==2)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=2)*(MULTZ)
 MULTZ = (ARRREG1==3)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=3)*(MULTZ)
 MULTZ = (ARRREG1==4)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=4)*(MULTZ)
+MULTZ = (ARRREG1==5)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=5)*(MULTZ)
 --ARRKZ - куб контроллирующий скорость фильтрации в тонких слоях, соединяющих СТ2-СТ1
 --ARRMZ - это куб, который везде имеет единицу, а занчения > 1 имеет в тех скважинах. где нужно отключить фильтрацию пинча. 
 --Середина расстояния - это значение 6
