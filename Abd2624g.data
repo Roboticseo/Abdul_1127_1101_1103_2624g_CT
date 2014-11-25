@@ -13,6 +13,11 @@ EQLDIMS
 3
 /
 
+
+REPORTFILE
+GRID LOW
+/
+
 -- 1-6  регион 1 - плохие фес одиночные линзы     СТ1
 -- 7-34 регион 2 - средние фес продуктивный        СТ1
 -- 35-59 регион 3 - средние фес продуктивный      СТ1
@@ -43,6 +48,11 @@ REGDIMS
 FAULTDIM
 100000 /
 
+GRIDOPTS
+YES 0 3
+/
+
+
 ENDSCALE
 /
 
@@ -64,6 +74,9 @@ INCLUDE
 INCLUDE
 'GEOL/PORO.grdecl' /
 
+INCLUDE
+'GEOL/ARRMARK.inc' / -- grid 
+
 NOECHO
 
 ARITHMETIC
@@ -74,26 +87,94 @@ SOWCR = 0.3878
 SWL = MIN(98.2059806 * ((PORO*100)^-2.46377) , 0.6 )
 SWCR = SWL 
 PCW = 1*28*0.318316*((PORO/ARRKX)^0.5)
+PERMX = 3*PERMX 
 PERMY = PERMX
 PERMZ = 1 * PERMX
---MULTPV(1:1,1:25,) = 100
---MULTPV(46:46,1:25,) = 100
---MULTPV(46:46,1:25,) = 100
---MULTPV(1:46,25:25,) = 100
---MULTPV(1:46,1:1,) = 1
+MULTPV = 1
+MULTPV(1:85,1:1,) = 200 
+MULTPV(1:85,116:116,) = 200 
+MULTPV(1:1,1:116,) = 30
+MULTPV(1:1,61:116,) = 1
+MULTPV(85:85,1:116,) = 200
 NTG(,,65:65) = 0
 KRO = 1 
 KRORW = 1
 KRWR = 0.05474/0.45238 
 KRW = 1
+ /
+
+
+INCLUDE
+'MULTS.inc' / мульты адаптации
+
+INCLUDE
+'GEOL/ARRFIP.map' / мульты адаптации
+
+ARITHMETIC
+ARRREG1 = 0
+-- ARRREG1 куб, который обозначает номера секторов и пределы модификаций по индексу k для multz (только распространение низких значений и ненулевых множителей)
+-- например в подсекторах модификации носят измеениия в разных слоях, так как разные ГСР для каждого сектора. поэтому должен быть 
+-- куб, который бы контролировал вертикальные слои изменений MULTZ
+ARRREG1(,,65:81) = (ARRFIP==1)*1+(ARRFIP!=1)*ARRREG1 
+ARRREG1(,,65:81) = (ARRFIP==2)*2+(ARRFIP!=2)*ARRREG1 
+ARRREG1(,,41:81) = (ARRFIP==3)*3+(ARRFIP!=3)*ARRREG1 
+ARRREG1(,,54:81) = (ARRFIP==4)*4+(ARRFIP!=4)*ARRREG1 
+ARRREG1(,,57:81) = (ARRFIP==5)*5+(ARRFIP!=5)*ARRREG1 
+ARRREG2(46:51,96:101,48:50) = 3 -- для адаптации 1295
+ARRREG2 = 0
+-- ARRREG2 куб, который обозначает номера секторов и пределы модификаций по индексу k для multz (только распространение ненулевых множителей)
+-- например в подсекторах модификации носят измеениия в разных слоях, так как разные ГСР для каждого сектора. поэтому должен быть 
+-- куб, который бы контролировал вертикальные слои ОБНУЛЕНИЯ MULTZ
+ARRREG2(,,58:81) = (ARRFIP==1)*1+(ARRFIP!=1)*ARRREG2 
+ARRREG2(,,58:81) = (ARRFIP==2)*2+(ARRFIP!=2)*ARRREG2 
+ARRREG2(,,56:81) = (ARRFIP==3)*3+(ARRFIP!=3)*ARRREG2 
+ARRREG2(,,54:81) = (ARRFIP==4)*4+(ARRFIP!=4)*ARRREG2 
+ARRREG2(,,57:81) = (ARRFIP==5)*5+(ARRFIP!=5)*ARRREG2 
+ARRREG2(46:51,96:101,48:50) = 3 -- для адаптации 1295
+ /
+
+ARITHMETIC
+PCW = ARRMPCW * PCW
+PERMX = ARRKX * PERMX
+PERMY = PERMX
+MULTZ = 1 
+MULTZ = (ARRREG1==2)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=2)*(MULTZ)
+MULTZ = (ARRREG1==3)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=3)*(MULTZ)
+MULTZ = (ARRREG1==4)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=4)*(MULTZ)
+MULTZ = (ARRREG1==5)*((ARRMARK==1)*0.00001*ARRKZ + (ARRMARK!=1)*MULTZ)+(ARRREG1!=5)*(MULTZ)
+--ARRKZ - куб контроллирующий скорость фильтрации в тонких слоях, соединяющих СТ2-СТ1
+--ARRMZ - это куб, который везде имеет единицу, а занчения > 1 имеет в тех скважинах. где нужно отключить фильтрацию пинча. 
+--Середина расстояния - это значение 6
+--Значит, если хотим ближе к скажине обрубить, значит ставим значение ближе к 6. 
+--если хотим затронуть облать подальше - ставим 100. Вот так
+ARRMZ = (ARRMZ>=6)*0+(ARRMZ<6)*1
+--ARRMARK это куб, который
+--позволяет отметить ячейки, огибающие неколлектор. таким образом этот куб позволит контролировать 
+--проводимость NNC соединений, порождаемых пинчом
+MULTZ = (ARRREG2 != 0)*((ARRMARK==1)*ARRMZ * MULTZ + (ARRMARK!=1)*MULTZ)+(ARRREG2 == 0)*(MULTZ)
+PERMZ = ARRKX*PERMZ 
+PINCHNUM = 1 
+PINCHNUM(,,1:64) = (ARRFIP==1)*3+(ARRFIP!=1)*PINCHNUM
+PINCHNUM(,,1:90) = (ARRFIP==2)*2+(ARRFIP!=2)*PINCHNUM
+PINCHNUM(,,1:90) = (ARRFIP==3)*2+(ARRFIP!=3)*PINCHNUM
+PINCHNUM(,,1:90) = (ARRFIP==4)*2+(ARRFIP!=4)*PINCHNUM
+PINCHNUM(,,1:90) = (ARRFIP==5)*2+(ARRFIP!=5)*PINCHNUM
+--173RTM нужна вода снизу
+PORO(14:25,18:28,69:71) = (NTG==0)*0.08 + (NTG!=0)*PORO
+PERMZ(14:25,18:28,69:71) = (NTG==0)*20 + (NTG!=0)*PERMZ
+SWL(14:25,18:28,69:71) = (NTG==0)*0.3 + (NTG!=0)*SWL
+SWCR(14:25,18:28,69:71) = (NTG==0)*0.3 + (NTG!=0)*SWCR
+--PCW(14:25,18:28,69:71) = (NTG==0)*1.3 + (NTG!=0)*PCW
+NTG(14:25,18:28,69:71) = (NTG==0)*1 + (NTG!=0)*NTG
+--1288-1289wells water break
+MULTZ(50:61,104:113,27:54) = (ARRMARK==1)*0 + (ARRMARK!=1)*MULTZ
 /
 
---INCLUDE
---'MULTS.inc' / мульты адаптации
-
---ARITHMETIC
---PCW = ARRMPCWINIT * PCW -- корректирую на начальное насыщение и настроку ВНК
--- /
+PINCHREG
+5* /
+10.0 GAP 3* /
+3.0 GAP 3* /
+ /
 
 
 PROPS
@@ -299,7 +380,7 @@ SOLUTION
 
 EQUIL
      1176	140   1183.000    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
-     1176	140   1190.204    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
+     1176	140   1183.000    1*     1*    1*    1	1	0	1*   / --FWL с учетом опробований и ГИС по 10 точкам
      1176	140   1100.204    1*     1*    1*    1	1	0	1*   / -- водоносный
 /
 
