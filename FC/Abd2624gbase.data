@@ -5,13 +5,6 @@ MAXLINIT 600
  /
 
 
-DEFINES 
-'M23SHKA'	0.2	0	1	FLOAT	/
-'M277'	1	0	1	FLOAT	/
-'M279'	1	0	1	FLOAT	/
-'M381'	1	0	1	FLOAT	/
-/
-
 METRIC
 
 DIMENS
@@ -113,7 +106,7 @@ KRW = 1
 
 
 INCLUDE
-'MULTS.inc' / мульты адаптации
+'../MULTS.inc' / мульты адаптации
 
 INCLUDE
 '../GEOL/ARRFIP.map' / мульты адаптации
