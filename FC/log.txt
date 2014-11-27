@@ -26,4 +26,19 @@
  FC/Abd2624gFC_exp1_00004.data      - файлы эксперимента(экспериментов)
  FC/Abd2624gFC_exp1_00005.data      - файлы эксперимента(экспериментов)
  FC/Abd2624gFC_exp1_00006.data      - файлы эксперимента(экспериментов)
+
+FC/Abd2624gFCpessimism.data - проект многовариантного расчета в случае с пессимистичной структурой
+FC/Abd2624gFCpessimism.hmp - проект многовариантного расчета в случае с оптимистичной структурой
+FC/Abd2624gFCpessimism.hmp.old - темповый файл
+FC/Abd2624gFCpessimism.ini - настройки
+FC/Abd2624gFCpessimism.ini.old - темповый файл
+FC/Abd2624gFCpessimism.log - лог	
+FC/Abd2624gFCpessimism_exp1.data            - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00000.data      - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00001.data      - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00002.data      - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00003.data      - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00004.data      - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00005.data      - файлы эксперимента(экспериментов)
+FC/Abd2624gFCpessimism_exp1_00006.data      - файлы эксперимента(экспериментов)
 ******************************************************

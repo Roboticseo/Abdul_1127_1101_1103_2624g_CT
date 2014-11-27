@@ -3,6 +3,6 @@ RESULTS/*
 USER/*
 *.SMSPEC
 *.UNSMRY
-*/*GRID.grdecl
+*/*GRID*.grdecl
 *.flux
 pat/*
