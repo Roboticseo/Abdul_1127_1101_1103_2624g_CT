@@ -1,0 +1,13 @@
+-- Experiment #1 (Торнадо эксперимент)
+
+-- experiment base parameter values
+PREDEFINES
+  MKX 1.000000000000000 0.2250000 1.8000000 FLOAT /
+  MMULZ 1.000000000000000 0.9000000 11.0000000 FLOAT /
+  MPPCW 1.000000000000000 0.2920000 1.4000000 FLOAT /
+/
+
+-- project base data file
+OPEN_BASE_MODEL
+ 'Abd2624gFCoptniz.data' /
+
