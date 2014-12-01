@@ -130,7 +130,7 @@
           </data_point>
           <data_file_name length="26">Abd2624gFC_exp1_00005.data</data_file_name>
         </node_5>
-        <node_6 variant_id="6" model_record_id="7" status="Not calculated " model_marked_for_recalculation_int="0">
+        <node_6 variant_id="6" model_record_id="7" status="Calculated " model_marked_for_recalculation_int="0">
           <data_point point_type="base" pid="6" nD="3" y_value="-1.000000000000000e+000" y_status="none" status="not evaluated">
             <x array_len="3"> 1.000000000000000 1.000000000000000 1.400000000000000</x>
           </data_point>

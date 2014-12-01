@@ -74,11 +74,11 @@ model_records\6\results_status=Calculated
 model_records\7\model_record_id=7
 model_records\7\path=Abd2624gFC_exp1_00006.data
 model_records\7\submitted_time=@Variant(\0\0\0\x10\0%}\x9c\x4q\x87<\xff)
-model_records\7\calculated_time=@Variant(\0\0\0\x10\0\0\0\0\xff\xff\xff\xff\xff)
-model_records\7\calculation_status=idle
+model_records\7\calculated_time=@Variant(\0\0\0\x10\0%}\x9d\0\xd4\x36v\xff)
+model_records\7\calculation_status=model_calculated
 model_records\7\start_error=unset
 model_records\7\serious_error=unset
-model_records\7\results_status=No Results
+model_records\7\results_status=Calculated
 
 [calc_manager_records]
 version=1
