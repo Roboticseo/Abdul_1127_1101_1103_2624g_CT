@@ -1,6 +1,6 @@
 [General]
 version=2
-main_tab_index=0
+main_tab_index=2
 show_calculated_models=true
 cluster_id=0
 auto_queue_set=true
@@ -8,12 +8,12 @@ max_models_in_cluster_queue=1
 need_to_configure_calc_opts=false
 auto_force_stop_enabled=true
 job_stop_wait_limit__sec=120
-recent_path=
+recent_path=D:/BN_work/10_2014/Abdul_1127_1101_1103_2624g_CT/model/FC/Abd2624gFC.hmp
 hide_error_models=false
 check_new_models=true
 group_checked_models=false
 keep_models_sorted=true
-queue_results_tab=0
+queue_results_tab=2
 
 [model_records_version_list]
 size=1
@@ -30,7 +30,7 @@ model_records\1\calculated_time=@Variant(\0\0\0\x10\0%}\x9c\x4\xaa|\xe0\xff)
 model_records\1\calculation_status=model_calculated
 model_records\1\start_error=unset
 model_records\1\serious_error=unset
-model_records\1\results_status=Calculated
+model_records\1\results_status=Load Error
 model_records\2\model_record_id=2
 model_records\2\path=Abd2624gFC_exp1_00001.data
 model_records\2\submitted_time=@Variant(\0\0\0\x10\0%}\x9c\x4q\x87<\xff)
@@ -181,14 +181,24 @@ records\7\model_calculation_options\license_wait_time_limit_secs=120
 1\attached_functions=0
 1\attached_functions\size=0
 1\conf\name=
-1\conf\type=Quadratic
+1\conf\type=Forecast
 1\conf\object_type=Well
 1\conf\timesteps_default=1
-1\conf\objects\size=0
-1\conf\summands\size=0
+1\conf\objects\size=3
+1\conf\summands\size=1
 size=1
-1\conf\time_start=-1
-1\conf\time_finish=-1
+1\conf\time_start=26815
+1\conf\time_finish=48944
+1\conf\objects\1\object=W3
+1\conf\objects\1\weight=1
+1\conf\objects\2\object=W4
+1\conf\objects\2\weight=1
+1\conf\objects\3\object=W5
+1\conf\objects\3\weight=1
+1\conf\summands\1\par=Oil
+1\conf\summands\1\par_type=Max
+1\conf\summands\1\weight=1
+1\conf\summands\1\constrate=0
 
 [email_notification_settings]
 enable_completion_notification=false
@@ -214,8 +224,8 @@ parameters_visibility\W_INJ=true
 parameters_visibility\TOT_W_INJ=true
 parameters_visibility\G_INJ=true
 parameters_visibility\TOT_G_INJ=true
-parameters_visibility\AQUIFER_W=true
-parameters_visibility\TOT_AQUIFER_W=true
+parameters_visibility\AQUIFER_W=false
+parameters_visibility\TOT_AQUIFER_W=false
 parameters_visibility\O_IN_PLACE=true
 parameters_visibility\W_IN_PLACE=true
 parameters_visibility\G_IN_PLACE=true
@@ -223,7 +233,7 @@ parameters_visibility\WATERCUT=true
 parameters_visibility\GOR=true
 
 [page_table_of_mismatches]
-parameters_visibility\ALG_OBJ_FUNC=true
+parameters_visibility\ALG_OBJ_FUNC=false
 parameters_visibility\CUSTOM_OBJ_FUNC=true
 parameters_visibility\MISMATCH_O_RATE=true
 parameters_visibility\MISMATCH_W_RATE=true
@@ -235,7 +245,7 @@ parameters_visibility\DIFF_L_TOTAL=true
 parameters_visibility\DIFF_G_TOTAL=true
 
 [page_graph]
-current_object=FIELD
+current_object=WELL_46
 current_parameter=O_PROD
 
 [page_crossplot]
@@ -269,3 +279,8 @@ max_calc_time__minutes=1439
 core_count=24
 license_wait_time_limit_enabled=true
 license_wait_time_limit_secs=120
+
+[page_table_of_variables]
+parameters_visibility\MODEL_VARIABLE_0=true
+parameters_visibility\MODEL_VARIABLE_1=true
+parameters_visibility\MODEL_VARIABLE_2=true
