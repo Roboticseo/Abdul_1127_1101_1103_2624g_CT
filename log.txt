@@ -1,4 +1,23 @@
 ======================================================
+20141212 Доадаптация сектора (в связи с 10ЕРМ). Abd2624g2.data
+--- C:/Users/SazonovEO/AppData/Local/Temp/oUtb5c_Abd2624g2.data	Fri Dec 12 12:27:34 2014
++++ D:/BN_work/10_2014/Abdul_1127_1101_1103_2624g_CT/model/Abd2624g2.data	Fri Dec 12 12:27:10 2014
+@@ -170,2 +170,3 @@
+ MULTZ(50:61,104:113,27:54) = (ARRMARK==1)*0 + (ARRMARK!=1)*MULTZ
++PCW(1:61,1:1,) = PCW*0.3
+ /
+--- C:/Users/SazonovEO/AppData/Local/Temp/K8rvTc_MULTS.inc	Fri Dec 12 12:27:52 2014
++++ D:/BN_work/10_2014/Abdul_1127_1101_1103_2624g_CT/model/MULTS.inc	Fri Dec 12 12:17:52 2014
+@@ -140,3 +140,3 @@
+ ARRMZ=ARRMZ + 11*block(16226.26025, 20041.088)	 -- 1113
+-ARRMZ=ARRMZ + 1*block(16397.9575, 19701.206)	 -- 1115
++ARRMZ=ARRMZ + 11*block(16397.9575, 19701.206)	 -- 1115
+ ARRMZ=ARRMZ + 11*block(16788.46775, 19699.88075)	 -- 1116
+======================================================
+
+
+
+======================================================
 20141212 Доадаптация сектора (в связи с 10ЕРМ). Abd2624g.data
 --- C:/Users/SazonovEO/AppData/Local/Temp/Dls0fa_MULTS.inc	Fri Dec 12 11:18:19 2014
 +++ D:/BN_work/10_2014/Abdul_1127_1101_1103_2624g_CT/model/MULTS.inc	Fri Dec 12 11:02:21 2014
